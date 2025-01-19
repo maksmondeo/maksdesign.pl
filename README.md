@@ -4,6 +4,8 @@
 
 **MaksDesign** is my portfolio and freelance service platform. This website showcases my skills in website/graphic creation, and provides a seamless way to request custom projects.
 
+![Image](https://github.com/user-attachments/assets/9a94c164-c1a4-4bd4-afc5-c204d609cd36)
+
 ## Features
 
 ### Portfolio Showcase
