@@ -1,0 +1,301 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <title>MaksDesign - Tworzenie Stron WWW i Grafik</title>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="description"
+            content="Tworzę Nowoczesne Strony i Grafiki komputerowe. Podkręć obecność swojej marki w sieci.">
+        <meta name="keywords" content="tworzenie stron internetowych, strony www na zamówienie , grafiki na zamówienie, tworzenie grafiki komputerowej, wizytówki na zamówienie">
+        <link rel="canonical" href="https://maksdesign.pl/">
+        <meta property="og:locale" content="pl_PL">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="MaksDesign - Tworzenie Stron WWW i Grafik">
+        <meta property="og:description"
+            content="Tworzę Nowoczesne Strony i Grafiki komputerowe. Podkręć obecność swojej marki w sieci.">
+        <meta property="og:url" content="https:/maksdesign.pl/">
+        <meta property="og:site_name" content="MaksDesign">
+        <meta property="article:publisher" content="https://www.instagram.com/maksdesign.pl/">
+        <meta property="article:modified_time" content="2024-08-23T03:17:18+00:00">
+        <meta property="og:image" content="{% static 'graphic-design.jpg' %}">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="200">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:label1" content="Szacowany czas czytania">
+        <meta name="twitter:data1" content="1 minuta">
+        <script src="{% static 'scripts.js' %}" defer></script>
+        <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> 
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+        <script>
+        const lenis = new Lenis()
+        lenis.on('scroll', (e) => {
+            console.log(e)
+        })
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+        </script>
+    </head>
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="//stats67.mydevil.net/";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '40']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'index' %}" class="logo"><p>Maks</p><p class="purple-text">Design</p></a>
+            <button class="menu-toggle" id="menu-toggle">
+                <span class="menu-icon">&#9776;</span>
+            </button>
+            <ul id="nav-menu">
+                <li><a href="#" id="omnie">O mnie</a></li>
+                <li><a href="#" id="projekty">Moje projekty</a></li>
+                <li><a href="#" id="kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% if success_message %}
+    <div id="full-screen-message" class="notification">
+        <p>{{ success_message }}</p>
+    </div>
+    {% endif %}
+    <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <h3>PODKRĘĆ OBECNOŚĆ SWOJEJ MARKI W SIECI</h3>
+                    <h1>Design Stron<br>
+                        Grafiki Komputerowe</h1>
+                    <a>Bez kreatorów stron ani WordPress'a. Oferuję w 100% ręcznie kodowane strony internetowe z doskonałymi rezultatami.</a><br><br>
+                    <button class="purple-button" id="kontakt">Zamów projekt</button>
+                </div>
+                <div class="col-2">
+                    <div class="shapes-img">
+                        <img class="shape-1" src="{% static 'circle.png' %}" alt="Okrąg dekoracyjny">
+                        <img class="shape-2" src="{% static 'triangle.png' %}" alt="Trójkąt dekoracyjny">
+                        <img class="shape-3" src="{% static 'square.png' %}" alt="Kwadrat dekoracyjny">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="why-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h1>Jestem Maks, czyli...</h1>
+                    <a>...szybko rozwijający się programista, specjalizujący się w tworzeniu stron internetowych. Aktualnie <span>studiuję informatykę na Politechnice Lubelskiej</span> (drugi rok). Nieprzerwanie poszerzam swoje umiejętności samokształcąc się z różnoraodnych źródeł wiedzy.</a>
+                </div>
+                <div class="col-8">
+                    <img src="{% static 'omnie.jpg' %}" alt="Dlaczego warto mnie wybrać">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="projects">
+        <div class="container">
+            <div class="row center">
+                <h1>Moje Projekty</h1>
+            </div>
+            {% for project in projects %}
+            <div class="row center strona">
+                <a href="https://{{ project.title }}" target="_blank">
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}"><br>
+                    {{ project.title }}
+                </a><br>
+                <p>{{ project.description }}</p>
+            </div>
+            {% endfor %}
+            <div class="row center" style="display: flex;">
+                <div class="third">
+                    <img class="grafika" src="{% static 'portfolio-item1.jpg' %}"><br>
+                </div>
+                <div class="third">
+                    <img class="grafika" src="{% static 'portfolio-item2.jpg' %}"><br>
+                </div>
+                <div class="third">
+                    <img class="grafika" src="{% static 'portfolio-item13.jpg' %}"><br>
+                </div>
+            </div><br>
+            <img class="grafika grafika-mobile" src="{% static 'portfolio-item5.jpg' %}"><br><br>
+            <div class="row center" style="display: flex;">
+                <div class="third">
+                    <img class="grafika" src="{% static 'portfolio-item20.jpg' %}"><br>
+                </div>
+                <div class="third">
+                    <img class="grafika" src="{% static 'portfolio-item21.jpg' %}"><br>
+                </div>
+                <div class="third">
+                    <img class="grafika" src="{% static 'portfolio-item22.jpg' %}"><br>
+                </div>
+            </div>
+            <img class="grafika grafika-mobile" src="{% static 'portfolio-item23.jpg' %}"><br>
+            <div class="row center" style="display: flex;">
+                <div class="third">
+                    <img class="grafika" src="{% static 'portfolio-item10.jpg' %}"><br>
+                </div>
+                <div class="third">
+                    <img class="grafika" src="{% static 'portfolio-item9.jpg' %}"><br>
+                </div>
+                <div class="third">
+                    <img class="grafika" src="{% static 'portfolio-item8.jpg' %}"><br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-14">
+                    <h1>Opinie moich klientów</h1>
+                    <blockquote>
+                        <p>"Prowadzę działalność w której ważne są estetyczne oraz proste grafiki na social media, Maks bardzo dobrze sprawdził się w roli grafika, który odciążył mnie z tego obowiązku. Dzięki temu zacząłem pozyskiwać więcej klientów oraz mój wizerunek wygląda o wiele bardziej profesjonalnie. Szczerze polecam każdemu przedsiębiorcy"</p>
+                        <cite><a href="https://www.instagram.com/dawid_rejniak/">Dawid Rejniak</a>, Trener Personalny</cite>
+                    </blockquote>
+                </div>
+                <div class="col-14">
+                    <blockquote>
+                        <p>"Serdecznie polecam Maksa! grafiki dla mojej strony masażu zostały wykonane na bardzo wysokim poziomie w krótkim czasie, a kontakt i współpraca przebiegła bez najmniejszych problemów. Szczerze polecam!"</p>
+                        <cite><a href="https://www.instagram.com/sila.masazu.lublin/    ">Siła Masażu Lublin</a>, Masażysta</cite>
+                    </blockquote>
+                </div>
+                <div class="col-14">
+                    <blockquote>
+                        <p>"Bardzo polecam! w bardzo krótkim czasie otrzymałem logo dla firmy, banner oraz ikonki."</p>
+                        <cite><a href="https://www.facebook.com/profile.php?id=61552980767376">GREEN TREE WEAR</a>, Sklep Odzieżowy</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="guarantee">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h1>Gwarancja</h1>
+                    <a>Przez 14 dni od wykonania projektu zapewniam priorytetowe wsparcie, w razie potrzeby dokonania
+                        zmian. Nie pobiorę za to żadnych opłat.</a>
+                </div>
+                <div class="col-7">
+                    <img class="lock" src="{% static 'lock.png' %}" alt="Kłódka">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="container">
+            <div class="row row-disappear">
+                <div class="col-0">
+                    <h1>Wyślij do mnie wiadomość</h1>
+                    <h2>Wspólnie ustalimy szczegóły naszej współpracy</h2><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="id_name">Imię</label><br>
+                            {{ form.name }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_email">Email</label><br>
+                            {{ form.email }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_phone">Telefon</label><br>
+                            {{ form.phone }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_message">Wiadomość</label><br>
+                            {{ form.message }}
+                        </div>
+                        <div class="form-captcha">
+                            {{ form.captcha }}<br>
+                        </div>
+                        <button class="purple-button" type="submit">Wyślij</button>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <h1>Wyślij do mnie wiadomość</h1>
+                    <h2>Wspólnie ustalimy szczegóły naszej współpracy</h2><br>
+                    <h3>Dodatkowy kontakt:</h3>
+                    <div class="mini-contact">
+                        <p>Telefon: <a href="tel:+48730310103">730 310 103</a></p><br>
+                        <p>Email: <a href="mailto: kontakt@maksdesign.pl">kontakt@maksdesign.pl</a></p><br>
+                        <p>...lub napisz do mnie na <a href="https://www.instagram.com/maksdesign.pl">Instagramie</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h3>Maksdesign</h3>
+                    <p>Wystrzel ze mną swój biznes do cyfrowego świata! Oferuję kompleksowe usługi tworzenia grafik komputerowych oraz stron internetowych.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Szybkie linki</h4>
+                    <ul>
+                        <li><a href="#" id="omnie">O mnie</a></li>
+                        <li><a href="#" id="projekty">Moje projekty</a></li>
+                        <li><a href="#" id="kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-details">
+                    <h4>Kontakt</h4>
+                    <p>Telefon: <a href="tel:+48730310103">+48 730 310 103</a></p><br>
+                    <p>Email: <a href="mailto: kontakt@maksdesign.pl">kontakt@maksdesign.pl</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>SocialMedia</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61565908382116"><img src="{% static 'facebook.png' %}" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/maksdesign.pl"><img src="{% static 'instagram.png' %}" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MaksDesign | Wszelkie prawa zastrzeżone.</p><br>
+                <p><a href="{% url 'polityka' %}">Polityka prywatności</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('show');
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                var notification = document.getElementById("full-screen-message");
+                if (notification) {
+                    notification.classList.add("fade-out");
+                    setTimeout(function() {
+                        notification.classList.add("hidden");
+                    }, 500);
+                }
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

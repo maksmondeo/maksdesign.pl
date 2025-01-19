@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <title>Polityka Prywatności | MaksDesign - Tworzenie Stron WWW i Grafik</title>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="description" content="Zapoznaj się z moją polityką prywatności, aby dowiedzieć się, jak chronię Twoje dane osobowe podczas korzystania z moich usług.">
+        <meta name="keywords" content="tworzenie stron internetowych, strony www na zamówienie , grafiki na zamówienie, tworzenie grafiki komputerowej, wizytówki na zamówienie">      
+        <link rel="canonical" href="https://maksdesign.pl/">
+        <meta property="og:locale" content="pl_PL">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Polityka Prywatności | MaksDesign - Tworzenie Stron WWW i Grafik">
+        <meta property="og:description"
+        content="Zapoznaj się z moją polityką prywatności, aby dowiedzieć się, jak chronię Twoje dane osobowe podczas korzystania z moich usług.">
+        <meta property="og:url" content="https:/maksdesign.pl/">
+        <meta property="og:site_name" content="MaksDesign">
+        <meta property="article:publisher" content="https://www.instagram.com/maksdesign.pl">
+        <meta property="article:modified_time" content="2024-08-23T03:17:18+00:00">
+        <meta property="og:image" content="{% static 'graphic-design.jpg' %}">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="200">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:label1" content="Szacowany czas czytania">
+        <meta name="twitter:data1" content="1 minuta">
+        <script src="{% static 'scripts.js' %}" defer></script>
+        <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> 
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+        <script>
+            const lenis = new Lenis()
+            lenis.on('scroll', (e) => {
+                console.log(e)
+            })
+            function raf(time) {
+                lenis.raf(time)
+                requestAnimationFrame(raf)
+            }
+            requestAnimationFrame(raf)
+            </script>
+    </head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'index' %}" class="logo"><p>Maks</p><p class="purple-text">Design</p></a>
+            <button class="menu-toggle" id="menu-toggle">
+                <span class="menu-icon">&#9776;</span>
+            </button>
+            <ul id="nav-menu">
+                <li><a href="{% url 'index' %}" id="omnie">O mnie</a></li>
+                <li><a href="{% url 'index' %}" id="projekty">Moje projekty</a></li>
+                <li><a href="{% url 'index' %}" id="kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="policy">
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <h1>Polityka prywatności</h1>
+                    <h2>I. Postanowienia ogólne</h2>
+                    <ol>
+                        <li>Polityka prywatności określa, jak zbierane, przetwarzane i przechowywane są dane osobowe Użytkowników niezbędne do świadczenia usług drogą elektroniczną za pośrednictwem serwisu internetowego https://www.maksdesign.pl (dalej: Serwis).</li>
+                        <li>Serwis zbiera wyłącznie dane osobowe niezbędne do świadczenia i rozwoju usług w nim oferowanych.</li>
+                        <li>Dane osobowe zbierane za pośrednictwem Serwisu są przetwarzane zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych, dalej RODO) oraz ustawą o ochronie danych osobowych z dnia 10 maja 2018 r.</li>
+                    </ol><br>
+                    <h2>II. Administrator danych</h2>
+                    <p>Administratorem danych osobowych zbieranych poprzez Serwis jest Maksymilian Wasilewski, adres: Wojciechów-Kolonia Piąta 39, 24-204 Wojciechów, adres poczty elektronicznej: kontakt@maksdesign.pl (dalej: Administrator).</p><br><br>
+                    <h2>III. Cel zbierania danych osobowych</h2>
+                    <ol>
+                        <li>Dane osobowe wykorzystywane są w celu:
+                            <ul>
+                                <li>komunikacji z Użytkownikiem (formularz kontaktowy)</li>
+                            </ul>
+                        </li>
+                        <li>Podanie danych jest dobrowolne, ale niezbędne do zawarcia umowy albo skorzystania z innych funkcjonalności Serwisu.</li>
+                    </ol><br>
+                    <h2>IV. Rodzaj przetwarzanych danych osobowych</h2>
+                    <p>Administrator może przetwarzać dane osobowe Użytkownika: imię i nazwisko, adres e-mail, numer telefonu.</p><br><br>
+                    <h2>V. Okres przetwarzania danych osobowych</h2>
+                    <p>Dane osobowe Użytkowników będą przetwarzane przez okres:</p>
+                    <ul>
+                        <li>gdy podstawą przetwarzania danych jest wykonanie umowy – do momentu przedawnienia roszczeń po jej wykonaniu,</li>
+                        <li>gdy podstawą przetwarzania danych jest zgoda – do momentu jej odwołania, a po odwołaniu zgody do przedawnienia roszczeń.</li>
+                    </ul>
+                    <p>W obu przypadkach termin przedawnienia wynosi 6 lat, a dla roszczeń o świadczenia okresowe i roszczeń dotyczących prowadzenia działalności gospodarczej – 3 lata (jeśli przepis szczególny nie stanowi inaczej).</p><br><br>
+                    <h2>VI. Udostępnianie danych osobowych</h2>
+                    <ol>
+                        <li>Dane osobowe Użytkowników mogą być przekazywane: podmiotom powiązanym z Administratorem, jego podwykonawcom, podmiotom współpracującym z Administratorem np. firmom obsługującym e-płatności, firmom świadczącym usługi kurierskie/pocztowe, kancelariom prawnym.</li>
+                        <li>Dane osobowe Użytkowników nie będą przekazywane poza teren Europejskiego Obszaru Gospodarczego (EOG).</li>
+                    </ol><br>
+                    <h2>VII. Prawa Użytkowników</h2>
+                    <ol>
+                        <li>Użytkownik Serwisu ma prawo do: dostępu do treści swoich danych osobowych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia, wniesienia sprzeciwu wobec przetwarzania, cofnięcia zgody w każdej chwili (co nie ma wpływu na zgodność z prawem przetwarzania dokonanego w oparciu o zgodę przed jej cofnięciem).</li>
+                        <li>Zgłoszenie o wystąpieniu przez Użytkownika z uprawnieniem wynikającym z wymienionych praw należy przesłać na adres [adres e-mail].</li>
+                        <li>Administrator spełnia lub odmawia spełnienia żądania niezwłocznie – maksymalnie w ciągu miesiąca od jego otrzymania.</li>
+                        <li>Użytkownik ma prawo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych, jeśli uzna, że przetwarzanie narusza jego prawa i wolności (RODO).</li>
+                    </ol><br>
+                    <h2>VIII. Postanowienia końcowe</h2>
+                    <ol>
+                        <li>Administrator ma prawo do wprowadzenia zmian w Polityce prywatności, przy czym prawa Użytkowników nie zostaną ograniczone.</li>
+                        <li>Informacja o wprowadzonych zmianach pojawi się w formie komunikatu dostępnego w Serwisie.</li>
+                        <li>W sprawach nieuregulowanych w niniejszej Polityce prywatności obowiązują przepisy RODO i przepisy prawa polskiego.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h3>Maksdesign</h3>
+                    <p>Wystrzel ze mną swój biznes do cyfrowego świata! Oferuję kompleksowe usługi tworzenia grafik komputerowych oraz stron internetowych.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Szybkie linki</h4>
+                    <ul>
+                        <li><a href="{% url 'index' %}" id="omnie">O mnie</a></li>
+                        <li><a href="{% url 'index' %}" id="projekty">Moje projekty</a></li>
+                        <li><a href="{% url 'index' %}" id="kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-details">
+                    <h4>Kontakt</h4>
+                    <p>Telefon: <a href="tel:+48730310103">+48 730 310 103</a></p><br>
+                    <p>Email: <a href="mailto: kontakt@maksdesign.pl">kontakt@maksdesign.pl</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>SocialMedia</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61565908382116"><img src="{% static 'facebook.png' %}" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/maksdesign.pl"><img src="{% static 'instagram.png' %}" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MaksDesign | Wszelkie prawa zastrzeżone.</p><br>
+                <p><a href="{% url 'polityka' %}">Polityka prywatności</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
