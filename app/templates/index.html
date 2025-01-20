@@ -34,13 +34,16 @@
         <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
         <script>
         const lenis = new Lenis()
+
         lenis.on('scroll', (e) => {
             console.log(e)
         })
+            
         function raf(time) {
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
+            
         requestAnimationFrame(raf)
         </script>
     </head>
@@ -96,12 +99,14 @@
             </div>
         </div>
     </section>
+
     <section class="why-us">
         <div class="container">
             <div class="row">
                 <div class="col-8">
                     <h1>Jestem Maks, czyli...</h1>
                     <a>...szybko rozwijający się programista, specjalizujący się w tworzeniu stron internetowych. Aktualnie <span>studiuję Informatykę na Politechnice Lubelskiej</span> (drugi rok). Nieprzerwanie poszerzam swoje umiejętności samokształcąc się z różnoraodnych źródeł wiedzy.</a>
+
                 </div>
                 <div class="col-8">
                     <img src="{% static 'omnie.jpg' %}" alt="Dlaczego warto mnie wybrać">
@@ -109,6 +114,7 @@
             </div>
         </div>
     </section>
+
     <section class="projects">
         <div class="container">
             <div class="row center">
@@ -158,8 +164,20 @@
                     <img class="grafika" src="{% static 'portfolio-item8.jpg' %}"><br>
                 </div>
             </div>
+            <div class="row center instagram" style="display: flex;">
+                <p>
+                    <a href="https://instagram.com/maksdesign.pl">
+                        ...zobacz więcej na 
+                        <img src="{% static 'instagram.png' %}">
+                        <span>Instagramie</span>
+                    </a>
+                </p>
+    
+            </div> 
         </div>
+
     </section>
+
     <section class="testimonials">
         <div class="container">
             <div class="row">
@@ -185,6 +203,7 @@
             </div>
         </div>
     </section>
+
     <section class="guarantee">
         <div class="container">
             <div class="row">
@@ -199,6 +218,7 @@
             </div>
         </div>
     </section>
+
     <section class="contact">
         <div class="container">
             <div class="row row-disappear">
@@ -285,6 +305,7 @@
             var navMenu = document.getElementById('nav-menu');
             navMenu.classList.toggle('show');
         });
+
         document.addEventListener("DOMContentLoaded", function() {
             setTimeout(function() {
                 var notification = document.getElementById("full-screen-message");
