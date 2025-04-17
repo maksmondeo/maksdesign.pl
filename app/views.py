@@ -3,6 +3,12 @@ from django.core.mail import send_mail
 from .forms import ContactForm
 from django.conf import settings
 from .models import Project
+from django.http import HttpResponse
+
+import environ
+env = environ.Env()
+environ.Env.read_env()
+
 def index(request):
     projects = Project.objects.all().order_by('-created_at')
     if request.method == 'POST':
@@ -26,8 +32,10 @@ def index(request):
     else:
         form = ContactForm()
     return render(request, 'index.html', {'form': form, 'projects': projects})
+
 def polityka(request):
     return render(request, 'polityka.html')
+
 def kontakt(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -49,3 +57,6 @@ def kontakt(request):
     else:
         form = ContactForm()
     return render(request, 'kontakt.html', {'form': form})
+
+def discord_verification(request):
+    return HttpResponse(env('DISCORD_KEY'), content_type="text/plain")
